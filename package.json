@@ -6,7 +6,10 @@
   "scripts": {
     "client:dev": "webpack-dev-server",
     "client:prod": "webpack -p",
-    "start": "npm run client:prod"
+    "lint:js": "eslint ./client/**/*.{js,jsx}",
+    "lint": "npm run lint:js",
+    "start": "npm run client:prod",
+    "test": "npm run lint"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +23,11 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
   }
