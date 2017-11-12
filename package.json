@@ -1,7 +1,7 @@
 {
   "name": "react-boilerplate",
   "version": "1.0.0",
-  "description": "",
+  "description": "React starter boilerplate",
   "main": "client/index.js",
   "scripts": {
     "client:dev": "webpack-dev-server",
@@ -11,8 +11,15 @@
     "start": "npm run client:prod",
     "test": "npm run lint"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcobiedermann/react-boilerplate.git"
+  },
+  "keywords": ["React", "JavaScript", "Boilerplate"],
+  "author": "Marco Biedermann",
+  "bugs": {
+    "url": "https://github.com/marcobiedermann/react-boilerplate/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "react": "^16.1.0",
