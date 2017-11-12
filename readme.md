@@ -1,5 +1,9 @@
 # React Boilerplate
 
+[![Build Status](https://travis-ci.org/marcobiedermann/react-boilerplate.svg)](https://travis-ci.org/marcobiedermann/react-boilerplate)
+[![dependencies Status](https://david-dm.org/marcobiedermann/react-boilerplate/status.svg)](https://david-dm.org/marcobiedermann/react-boilerplate)
+[![devDependencies Status](https://david-dm.org/marcobiedermann/react-boilerplate/dev-status.svg)](https://david-dm.org/marcobiedermann/react-boilerplate?type=dev)
+
 ## Table of contents
 
 * [Requirements](#requirements)
