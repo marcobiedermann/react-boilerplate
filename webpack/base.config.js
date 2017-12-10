@@ -1,4 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 /* eslint-enable */
 
@@ -20,22 +21,34 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+          ],
+          fallback: 'style-loader',
+        }),
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: [
           'babel-loader',
         ],
       },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
-      },
     ],
   },
+  plugins: [
+    new ExtractTextPlugin({
+      filename: 'assets/css/[name].css',
+    }),
+  ],
   resolve: {
     extensions: [
       '.js',
