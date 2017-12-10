@@ -1,57 +1,8 @@
-const path = require('path');
-const webpack = require('webpack');
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack/base.config');
+const devConfig = require('./webpack/dev.config');
+const prodConfig = require('./webpack/prod.config');
 
-const isDevelopment = process.env.NODE_ENV !== 'production';
+const isProduction = process.argv.indexOf('-p') !== -1;
 
-module.exports = {
-  devServer: {
-    contentBase: path.resolve(__dirname, 'docs'),
-    hot: true,
-  },
-  devtool: 'source-map',
-  entry: {
-    main: [
-      path.resolve(__dirname, 'client/index'),
-    ],
-  },
-  output: {
-    filename: 'assets/js/[name].js',
-    path: path.resolve(__dirname, 'docs'),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: [
-          'babel-loader',
-        ],
-      },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
-      },
-    ],
-  },
-  plugins: isDevelopment ? [
-    new webpack.HotModuleReplacementPlugin(),
-  ] : [
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      output: {
-        comments: false,
-      },
-      sourceMap: true,
-    }),
-  ],
-  resolve: {
-    extensions: [
-      '.js',
-      '.jsx',
-    ],
-  },
-};
+module.exports = merge(baseConfig, isProduction ? prodConfig : devConfig);
