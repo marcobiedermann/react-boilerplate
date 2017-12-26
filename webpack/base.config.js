@@ -54,6 +54,9 @@ module.exports = {
               spriteFilename: 'assets/images/sprite.svg',
             },
           },
+          {
+            loader: 'svgo-loader',
+          },
         ],
       },
     ],
