@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 dotenv.config({
   path: path.resolve(__dirname, '.env.production'),
@@ -91,6 +92,14 @@ module.exports = {
         useShortDoctype: true,
       },
       template: 'client/index.html',
+    }),
+    new UglifyJsPlugin({
+      sourceMap: true,
+      uglifyOptions: {
+        output: {
+          comments: false,
+        },
+      },
     }),
   ],
   resolve: {
