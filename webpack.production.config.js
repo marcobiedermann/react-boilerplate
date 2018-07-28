@@ -1,7 +1,12 @@
 /* eslint-disable import/no-extraneous-dependencies */
+const dotenv = require('dotenv');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+
+dotenv.config({
+  path: path.resolve(__dirname, '.env.production'),
+});
 
 module.exports = {
   devtool: 'source-map',
@@ -34,6 +39,12 @@ module.exports = {
           use: [
             {
               loader: 'css-loader',
+              options: {
+                sourceMap: true,
+              },
+            },
+            {
+              loader: 'postcss-loader',
               options: {
                 sourceMap: true,
               },

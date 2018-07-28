@@ -1,4 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
+const dotenv = require('dotenv');
 const path = require('path');
+
+dotenv.config({
+  path: path.resolve(__dirname, '.env.development'),
+});
 
 module.exports = {
   devServer: {
@@ -34,6 +40,9 @@ module.exports = {
           },
           {
             loader: 'css-loader',
+          },
+          {
+            loader: 'postcss-loader',
           },
         ],
       },
