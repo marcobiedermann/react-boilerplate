@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
     "develop": "webpack-dev-server --config webpack.development.config.js",
-    "lint:css": "stylelint ./client/**/*.css",
-    "lint:js": "eslint ./client/**/*.{js,jsx}",
+    "lint:css": "stylelint '**/*.css'",
+    "lint:js": "eslint '**/*.{js,jsx}'",
     "lint": "npm run lint:css && npm run lint:js",
     "test": "npm run lint"
   },
