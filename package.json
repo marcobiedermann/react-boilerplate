@@ -4,12 +4,11 @@
   "description": "React starter boilerplate",
   "main": "client/index.js",
   "scripts": {
-    "client:dev": "webpack-dev-server",
-    "client:prod": "webpack -p",
+    "build": "webpack -p",
+    "develop": "webpack-dev-server",
     "lint:css": "stylelint ./client/**/*.css",
     "lint:js": "eslint ./client/**/*.{js,jsx}",
     "lint": "npm run lint:css && npm run lint:js",
-    "start": "npm run client:prod",
     "test": "npm run lint"
   },
   "repository": {

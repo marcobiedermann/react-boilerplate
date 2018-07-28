@@ -28,7 +28,7 @@ npm install
 Server with live reloading
 
 ```sh
-npm run client:dev
+npm run develop
 ```
 
 Testing / Linting
@@ -40,7 +40,7 @@ npm test
 Build files for production
 
 ```sh
-npm start
+npm run build
 ```
 
 ## License
