@@ -26,8 +26,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.54",
