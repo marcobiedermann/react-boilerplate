@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///./client/components/App/style.css"],"names":[],"mappings":"AAAA;EACE,wBAAwB;CACzB","file":"assets/css/main.css","sourcesContent":[".app {\n  font-family: sans-serif;\n}\n"],"sourceRoot":""}
+{"version":3,"sources":["webpack:///./client/assets/js/components/App/style.css"],"names":[],"mappings":"AAAA;EACE,wBAAwB;CACzB","file":"assets/css/main.css","sourcesContent":[".app {\n  font-family: sans-serif;\n}\n"],"sourceRoot":""}
