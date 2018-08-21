@@ -4,34 +4,18 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const merge = require('webpack-merge');
+const baseConfig = require('./webpack.config');
 
 dotenv.config({
   path: path.resolve(__dirname, '.env.production'),
 });
 
-module.exports = {
+module.exports = merge(baseConfig, {
   devtool: 'source-map',
-  entry: {
-    main: [
-      path.resolve(__dirname, 'client/assets/js/index'),
-    ],
-  },
-  output: {
-    filename: 'assets/js/[name].js',
-    path: path.resolve(__dirname, 'docs'),
-  },
   mode: 'production',
   module: {
     rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'babel-loader',
-          },
-        ],
-      },
       {
         test: /\.css$/,
         exclude: /node_modules/,
@@ -101,10 +85,4 @@ module.exports = {
       },
     }),
   ],
-  resolve: {
-    extensions: [
-      '.js',
-      '.jsx',
-    ],
-  },
-};
+});
