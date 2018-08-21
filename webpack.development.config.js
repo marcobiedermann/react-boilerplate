@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const dotenv = require('dotenv');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 dotenv.config({
@@ -48,6 +49,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'client/index.html',
+    }),
+  ],
   resolve: {
     extensions: [
       '.js',
