@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const dotenv = require('dotenv');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const merge = require('webpack-merge');
@@ -19,28 +19,27 @@ module.exports = merge(baseConfig, {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-              },
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                sourceMap: true,
-              },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
             },
-          ],
-        }),
+          },
+        ],
       },
     ],
   },
   plugins: [
-    new ExtractTextPlugin('assets/css/[name].css'),
     new HtmlWebpackPlugin({
       minify: {
         caseSensitive: false,
@@ -75,6 +74,9 @@ module.exports = merge(baseConfig, {
         useShortDoctype: true,
       },
       template: 'client/index.html',
+    }),
+    new MiniCssExtractPlugin({
+      filename: 'assets/css/[name].css',
     }),
     new UglifyJsPlugin({
       sourceMap: true,
