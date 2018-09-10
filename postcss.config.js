@@ -1,5 +1,5 @@
-module.exports = ({ env }) => ({
+module.exports = ({ env, options }) => ({
   plugins: {
-    cssnano: env === 'production' ? {} : false,
+    cssnano: env === 'production' ? options.cssnano : false,
   },
 });

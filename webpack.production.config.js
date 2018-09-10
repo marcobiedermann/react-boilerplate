@@ -1,15 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const dotenv = require('dotenv');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config');
-
-dotenv.config({
-  path: path.resolve(__dirname, '.env.production'),
-});
 
 module.exports = merge(baseConfig, {
   devtool: 'source-map',
@@ -33,6 +27,11 @@ module.exports = merge(baseConfig, {
             loader: 'postcss-loader',
             options: {
               sourceMap: true,
+              config: {
+                ctx: {
+                  cssnano: {},
+                },
+              },
             },
           },
         ],
