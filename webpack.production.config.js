@@ -39,6 +39,18 @@ module.exports = merge(baseConfig, {
       },
     ],
   },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      },
+    },
+  },
   plugins: [
     new CleanWebpackPlugin('server/public'),
     new HtmlWebpackPlugin({
