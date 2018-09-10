@@ -7,6 +7,7 @@ module.exports = merge(baseConfig, {
   devServer: {
     contentBase: 'client',
   },
+  devtool: 'cheap-module-source-map',
   mode: 'development',
   module: {
     rules: [
@@ -19,9 +20,15 @@ module.exports = merge(baseConfig, {
           },
           {
             loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            },
           },
           {
             loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+            },
           },
         ],
       },
