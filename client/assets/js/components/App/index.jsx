@@ -1,9 +1,8 @@
 import React from 'react';
-
-import './style.css';
+import styles from './style.css';
 
 const App = () => (
-  <div className="app">
+  <div className={styles.app}>
     <h1>
       Hello, world
     </h1>
