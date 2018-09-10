@@ -75,7 +75,7 @@ module.exports = merge(baseConfig, {
       template: 'client/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].css',
+      filename: 'assets/css/[name].[contenthash:8].css',
     }),
     new UglifyJsPlugin({
       sourceMap: true,
