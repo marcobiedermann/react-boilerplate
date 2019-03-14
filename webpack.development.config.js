@@ -1,5 +1,4 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const baseConfig = require('./webpack.config');
 
@@ -36,9 +35,4 @@ module.exports = merge(baseConfig, {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: 'client/index.html',
-    }),
-  ],
 });
