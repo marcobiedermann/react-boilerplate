@@ -48,4 +48,4 @@ npm run build
 
 [MIT License](LICENSE)
 
-Copyright (c) 2018 Marco Biedermann
+Copyright (c) Marco Biedermann
