@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React starter boilerplate",
   "main": "client/index.jsx",
-  "private": false,
+  "private": true,
   "scripts": {
     "build": "webpack --config webpack.production.config.js",
     "develop": "webpack-dev-server --config webpack.development.config.js",
