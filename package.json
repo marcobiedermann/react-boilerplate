@@ -10,7 +10,8 @@
     "lint:css": "stylelint '**/*.css'",
     "lint:js": "eslint '**/*.{js,jsx}'",
     "lint": "npm run lint:css && npm run lint:js",
-    "test": "npm run lint && jest"
+    "test": "npm run lint && jest",
+    "test:ci": "npm test && codecov"
   },
   "repository": {
     "type": "git",
@@ -39,6 +40,7 @@
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
+    "codecov": "^3.5.0",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
     "dotenv-webpack": "^1.7.0",
