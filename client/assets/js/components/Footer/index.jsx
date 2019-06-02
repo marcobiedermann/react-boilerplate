@@ -1,14 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Footer = (props) => {
+const Footer = props => {
   const { children } = props;
 
-  return (
-    <footer>
-      {children}
-    </footer>
-  );
+  return <footer>{children}</footer>;
 };
 
 Footer.propTypes = {

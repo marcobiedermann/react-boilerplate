@@ -7,14 +7,14 @@
 
 ## Table of contents
 
-* [Requirements](#requirements)
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
 
 ## Requirements
 
-* [Node.js](https://nodejs.org)
+- [Node.js](https://nodejs.org)
 
 ## Installation
 

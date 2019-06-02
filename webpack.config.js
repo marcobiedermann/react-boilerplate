@@ -4,9 +4,7 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    main: [
-      path.resolve(__dirname, 'client/assets/js/index'),
-    ],
+    main: [path.resolve(__dirname, 'client/assets/js/index')],
   },
   output: {
     filename: 'assets/js/[name].[contenthash:8].js',
@@ -32,9 +30,6 @@ module.exports = {
     }),
   ],
   resolve: {
-    extensions: [
-      '.js',
-      '.jsx',
-    ],
+    extensions: ['.js', '.jsx'],
   },
 };
