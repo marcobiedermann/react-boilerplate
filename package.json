@@ -14,7 +14,7 @@
     "lint:css": "stylelint '**/*.css'",
     "lint:js": "eslint '**/*.{js,jsx}'",
     "lint": "npm run lint:css && npm run lint:js",
-    "test": "npm run lint && jest",
+    "test": "jest",
     "test:ci": "npm test && codecov"
   },
   "repository": {
@@ -38,23 +38,23 @@
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
-    "codecov": "^3.6.2",
+    "codecov": "^3.6.4",
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "dotenv-webpack": "^1.7.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-import": "^2.20.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react": "^7.18.3",
     "html-webpack-plugin": "^4.0.0-beta.11",
     "husky": "^4.2.1",
     "identity-obj-proxy": "^3.0.0",
@@ -72,7 +72,7 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.1",
+    "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2"
   }
 }
