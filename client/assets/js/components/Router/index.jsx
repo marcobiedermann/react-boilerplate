@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { lazy } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import IndexPage from '../../pages/IndexPage';
 import Layout from '../Layout';
+
+const IndexPage = lazy(() => import('../../pages/IndexPage'));
 
 const Router = () => (
   <BrowserRouter>
