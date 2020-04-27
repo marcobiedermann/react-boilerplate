@@ -6,16 +6,19 @@ const PageB = lazy(() => import('../pages/PageB'));
 
 const routes = [
   {
-    path: '/page-a',
-    component: PageA,
-  },
-  {
-    path: '/page-b',
-    component: PageB,
-  },
-  {
-    path: '/',
     component: IndexPage,
+    name: 'Home',
+    path: '/',
+  },
+  {
+    component: PageA,
+    name: 'Page A',
+    path: '/page-a',
+  },
+  {
+    component: PageB,
+    name: 'Page B',
+    path: '/page-b',
   },
 ];
 

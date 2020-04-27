@@ -8,7 +8,7 @@ const Router = () => (
     <Layout>
       <Switch>
         {routes.map((route) => (
-          <Route key={route.path} {...route} />
+          <Route key={route.path} exact {...route} />
         ))}
       </Switch>
     </Layout>
