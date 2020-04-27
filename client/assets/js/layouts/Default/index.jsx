@@ -1,33 +1,33 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import Main from '../../components/Main';
+import Navigation from '../../components/Navigation';
 import ROUTES from '../../constants/routes';
-import Footer from '../Footer';
-import Header from '../Header';
-import Main from '../Main';
-import Navigation from '../Navigation';
 
 const { INDEX, PAGE_A, PAGE_B } = ROUTES;
 
-const Layout = (props) => {
+const DefaultLayout = (props) => {
   const { children } = props;
 
   return (
-    <div>
+    <>
       <Header>
         <Navigation routes={[INDEX, PAGE_A, PAGE_B]} />
       </Header>
       <Main>{children}</Main>
       <Footer>Footer</Footer>
-    </div>
+    </>
   );
 };
 
-Layout.propTypes = {
+DefaultLayout.propTypes = {
   children: PropTypes.node,
 };
 
-Layout.defaultProps = {
+DefaultLayout.defaultProps = {
   children: null,
 };
 
-export default Layout;
+export default DefaultLayout;

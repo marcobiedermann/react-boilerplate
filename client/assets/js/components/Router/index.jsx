@@ -1,17 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import ROUTES from '../../constants/routes';
-import Layout from '../Layout';
+import Route from '../Route';
 
 const Router = () => (
   <BrowserRouter>
-    <Layout>
-      <Switch>
-        {Object.entries(ROUTES).map(([key, value]) => (
-          <Route key={key} exact {...value} />
-        ))}
-      </Switch>
-    </Layout>
+    <Switch>
+      {Object.entries(ROUTES).map(([key, value]) => (
+        <Route key={key} exact {...value} />
+      ))}
+    </Switch>
   </BrowserRouter>
 );
 

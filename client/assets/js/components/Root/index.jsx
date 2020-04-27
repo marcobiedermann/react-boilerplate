@@ -1,12 +1,8 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import Router from '../Router';
 
 const Root = () => {
-  return (
-    <Suspense fallback={<div>Loading …</div>}>
-      <Router />
-    </Suspense>
-  );
+  return <Router />;
 };
 
 export default Root;
