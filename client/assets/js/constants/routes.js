@@ -16,6 +16,11 @@ const routes = {
     name: 'Page B',
     path: '/page-b',
   },
+  ERROR_404: {
+    component: lazy(() => import('../pages/Error404')),
+    name: 'Error 404',
+    path: '*',
+  },
 };
 
 export default routes;
