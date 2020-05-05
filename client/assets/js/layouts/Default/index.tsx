@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
@@ -8,7 +7,7 @@ import ROUTES from '../../constants/routes';
 
 const { INDEX, PAGE_A, PAGE_B } = ROUTES;
 
-const DefaultLayout = (props) => {
+const DefaultLayout: React.FC = (props) => {
   const { children } = props;
 
   return (
@@ -20,14 +19,6 @@ const DefaultLayout = (props) => {
       <Footer>Footer</Footer>
     </>
   );
-};
-
-DefaultLayout.propTypes = {
-  children: PropTypes.node,
-};
-
-DefaultLayout.defaultProps = {
-  children: null,
 };
 
 export default DefaultLayout;

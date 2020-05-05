@@ -1,6 +1,7 @@
 import React from 'react';
+import { RouteProps } from 'react-router-dom';
 
-const IndexPage = () => {
+const IndexPage: React.FC<RouteProps> = () => {
   return (
     <div>
       <h1>Index Page</h1>

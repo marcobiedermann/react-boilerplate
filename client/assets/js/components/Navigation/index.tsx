@@ -1,8 +1,16 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navigation = (props) => {
+interface Route {
+  path: string;
+  name: string;
+}
+
+export interface NavigationProps {
+  routes: Route[];
+}
+
+const Navigation: React.FC<NavigationProps> = (props) => {
   const { routes } = props;
 
   return (
@@ -16,19 +24,6 @@ const Navigation = (props) => {
       </ul>
     </nav>
   );
-};
-
-Navigation.propTypes = {
-  routes: PropTypes.arrayOf(
-    PropTypes.shape({
-      path: PropTypes.string,
-      name: PropTypes.string,
-    }),
-  ),
-};
-
-Navigation.defaultProps = {
-  routes: [],
 };
 
 export default Navigation;

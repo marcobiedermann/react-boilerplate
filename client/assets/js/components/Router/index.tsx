@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import ROUTES from '../../constants/routes';
-import Route from '../Route';
+import AppRoute from '../AppRoute';
 
-const Router = () => (
+const Router: React.FC = () => (
   <BrowserRouter>
     <Switch>
       {Object.entries(ROUTES).map(([key, value]) => (
-        <Route key={key} exact {...value} />
+        <AppRoute key={key} exact {...value} />
       ))}
     </Switch>
   </BrowserRouter>

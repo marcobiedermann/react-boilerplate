@@ -1,10 +1,15 @@
-import PropTypes from 'prop-types';
 import React, { Suspense } from 'react';
-import { Route as RRoute } from 'react-router-dom';
+import { Route, RouteProps } from 'react-router-dom';
 import DefaultLayout from '../../layouts/Default';
 import PrivateRoute from '../PrivateRoute';
 
-const Route = (props) => {
+export interface AppRouteProps extends RouteProps {
+  component: React.ComponentType<any>;
+  isProtected?: boolean;
+  layout?: React.FC<any>;
+}
+
+const AppRoute: React.FC<AppRouteProps> = (props) => {
   const { component: Component, isProtected = false, layout: Layout = DefaultLayout, ...otherProps } = props;
 
   if (isProtected) {
@@ -12,26 +17,14 @@ const Route = (props) => {
   }
 
   return (
-    <RRoute>
+    <Route>
       <Layout>
         <Suspense fallback={<div>Loading …</div>}>
           <Component {...otherProps} />
         </Suspense>
       </Layout>
-    </RRoute>
+    </Route>
   );
 };
 
-Route.propTypes = {
-  component: PropTypes.any,
-  isProtected: PropTypes.bool,
-  layout: PropTypes.any,
-};
-
-Route.defaultProps = {
-  component: null,
-  isProtected: false,
-  layout: DefaultLayout,
-};
-
-export default Route;
+export default AppRoute;

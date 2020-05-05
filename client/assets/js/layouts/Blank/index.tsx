@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types';
 import React from 'react';
 import Footer from '../../components/Footer';
 import Main from '../../components/Main';
 
-const BlankLayout = (props) => {
+const BlankLayout: React.FC = (props) => {
   const { children } = props;
 
   return (
@@ -12,14 +11,6 @@ const BlankLayout = (props) => {
       <Footer>Footer</Footer>
     </>
   );
-};
-
-BlankLayout.propTypes = {
-  children: PropTypes.node,
-};
-
-BlankLayout.defaultProps = {
-  children: null,
 };
 
 export default BlankLayout;

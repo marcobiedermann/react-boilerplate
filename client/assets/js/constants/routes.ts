@@ -1,6 +1,18 @@
 import { lazy } from 'react';
 
-const routes = {
+interface Route {
+  component: React.FC<any> | React.LazyExoticComponent<React.FC<any>>;
+  layout?: React.FC<any>;
+  name: string;
+  path: string;
+  protected?: boolean;
+}
+
+interface Routes {
+  [key: string]: Route;
+}
+
+const routes: Routes = {
   INDEX: {
     component: lazy(() => import('../pages/IndexPage')),
     name: 'Home',
