@@ -13,7 +13,7 @@ const DefaultLayout: React.FC = (props) => {
   return (
     <>
       <Header>
-        <Navigation routes={[INDEX, PAGE_A, PAGE_B]} />
+        <Navigation routes={{ INDEX, PAGE_A, PAGE_B }} />
       </Header>
       <Main>{children}</Main>
       <Footer>Footer</Footer>

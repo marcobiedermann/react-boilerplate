@@ -1,13 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Routes } from '../../constants/routes';
 
-interface Route {
-  path: string;
-  name: string;
+export interface NavigationMenuProps {
+  routes: Routes;
 }
 
+const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
+  const { routes } = props;
+
+  return (
+    <ul>
+      {Object.entries(routes).map(([key, value]) => (
+        <li key={key}>
+          <Link to={value.path}>{value.name}</Link>
+
+          {value.routes && <NavigationMenu routes={value.routes} />}
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 export interface NavigationProps {
-  routes: Route[];
+  routes: Routes;
 }
 
 const Navigation: React.FC<NavigationProps> = (props) => {
@@ -15,15 +31,10 @@ const Navigation: React.FC<NavigationProps> = (props) => {
 
   return (
     <nav>
-      <ul>
-        {routes.map((route) => (
-          <li key={route.path}>
-            <Link to={route.path}>{route.name}</Link>
-          </li>
-        ))}
-      </ul>
+      <NavigationMenu routes={routes} />
     </nav>
   );
 };
 
 export default Navigation;
+export { NavigationMenu };
