@@ -1,14 +1,15 @@
 import { lazy } from 'react';
 
-interface Route {
+export interface Route {
   component: React.FC<any> | React.LazyExoticComponent<React.FC<any>>;
   layout?: React.FC<any>;
   name: string;
   path: string;
   protected?: boolean;
+  routes?: Routes;
 }
 
-interface Routes {
+export interface Routes {
   [key: string]: Route;
 }
 

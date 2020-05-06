@@ -1,16 +1,24 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import ROUTES from '../../constants/routes';
+import { Routes } from '../../constants/routes';
 import AppRoute from '../AppRoute';
 
-const Router: React.FC = () => (
-  <BrowserRouter>
-    <Switch>
-      {Object.entries(ROUTES).map(([key, value]) => (
-        <AppRoute key={key} exact {...value} />
-      ))}
-    </Switch>
-  </BrowserRouter>
-);
+export interface RouterProps {
+  routes: Routes;
+}
+
+const Router: React.FC<RouterProps> = (props) => {
+  const { routes } = props;
+
+  return (
+    <BrowserRouter>
+      <Switch>
+        {Object.entries(routes).map(([key, value]: any) => (
+          <AppRoute key={key} {...value} />
+        ))}
+      </Switch>
+    </BrowserRouter>
+  );
+};
 
 export default Router;
