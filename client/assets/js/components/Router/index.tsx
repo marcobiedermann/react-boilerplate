@@ -14,7 +14,7 @@ const Router: React.FC<RouterProps> = (props) => {
     <BrowserRouter>
       <Switch>
         {Object.entries(routes).map(([key, value]: any) => (
-          <AppRoute key={key} {...value} />
+          <AppRoute exact key={key} {...value} />
         ))}
       </Switch>
     </BrowserRouter>
