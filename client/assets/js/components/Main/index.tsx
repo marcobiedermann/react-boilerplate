@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Main: React.FC = (props) => {
-  const { children } = props;
-
-  return <main>{children}</main>;
+  return <main {...props} />;
 };
 
 export default Main;

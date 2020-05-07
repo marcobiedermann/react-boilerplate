@@ -3,11 +3,9 @@ import Footer from '../../components/Footer';
 import Main from '../../components/Main';
 
 const BlankLayout: React.FC = (props) => {
-  const { children } = props;
-
   return (
     <>
-      <Main>{children}</Main>
+      <Main {...props} />
       <Footer>Footer</Footer>
     </>
   );

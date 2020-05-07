@@ -1,9 +1,7 @@
 import React from 'react';
 
 const Footer: React.FC = (props) => {
-  const { children } = props;
-
-  return <footer>{children}</footer>;
+  return <footer {...props} />;
 };
 
 export default Footer;
