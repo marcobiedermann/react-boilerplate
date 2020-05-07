@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Route, RouteProps } from 'react-router-dom';
 import DefaultLayout from '../../layouts/Default';
+import Loader from '../Loader';
 import PrivateRoute from '../PrivateRoute';
 
 export interface AppRouteProps extends RouteProps {
@@ -19,7 +20,7 @@ const AppRoute: React.FC<AppRouteProps> = (props) => {
   return (
     <Route>
       <Layout>
-        <Suspense fallback={<div>Loading …</div>}>
+        <Suspense fallback={<Loader>Loading …</Loader>}>
           <Component {...otherProps} />
         </Suspense>
       </Layout>
