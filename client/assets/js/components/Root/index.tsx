@@ -1,9 +1,9 @@
 import React from 'react';
-import ROUTES from '../../constants/routes';
+import PAGES from '../../constants/pages';
 import Router from '../Router';
 
 const Root: React.FC = () => {
-  return <Router routes={ROUTES} />;
+  return <Router pages={PAGES} />;
 };
 
 export default Root;

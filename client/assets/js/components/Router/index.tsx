@@ -1,20 +1,20 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import { Route } from '../../constants/routes';
+import { Page } from '../../constants/pages';
 import AppRoute from '../AppRoute';
 
 export interface RouterProps {
-  routes: Route[];
+  pages: Page[];
 }
 
 const Router: React.FC<RouterProps> = (props) => {
-  const { routes } = props;
+  const { pages } = props;
 
   return (
     <BrowserRouter>
       <Switch>
-        {routes.map((route) => (
-          <AppRoute exact key={route.path} {...route} />
+        {pages.map((page) => (
+          <AppRoute key={page.path} {...page} />
         ))}
       </Switch>
     </BrowserRouter>

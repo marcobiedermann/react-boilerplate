@@ -1,21 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Route } from '../../constants/routes';
+import { Page } from '../../constants/pages';
 
 export interface NavigationMenuProps {
-  routes: Route[];
+  pages: Page[];
 }
 
 const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
-  const { routes } = props;
+  const { pages } = props;
 
   return (
     <ul>
-      {routes.map((route) => (
-        <li key={route.path}>
-          <Link to={route.path}>{route.name}</Link>
+      {pages.map((page) => (
+        <li key={page.path}>
+          <Link to={page.path}>{page.name}</Link>
 
-          {route.routes && <NavigationMenu routes={route.routes} />}
+          {page.pages && <NavigationMenu pages={page.pages} />}
         </li>
       ))}
     </ul>
@@ -23,15 +23,15 @@ const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
 };
 
 export interface NavigationProps {
-  routes: Route[];
+  pages: Page[];
 }
 
 const Navigation: React.FC<NavigationProps> = (props) => {
-  const { routes } = props;
+  const { pages } = props;
 
   return (
     <nav>
-      <NavigationMenu routes={routes} />
+      <NavigationMenu pages={pages} />
     </nav>
   );
 };
