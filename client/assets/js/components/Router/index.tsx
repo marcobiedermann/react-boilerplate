@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
-import { Routes } from '../../constants/routes';
+import { Route } from '../../constants/routes';
 import AppRoute from '../AppRoute';
 
 export interface RouterProps {
-  routes: Routes;
+  routes: Route[];
 }
 
 const Router: React.FC<RouterProps> = (props) => {
@@ -13,8 +13,8 @@ const Router: React.FC<RouterProps> = (props) => {
   return (
     <BrowserRouter>
       <Switch>
-        {Object.entries(routes).map(([key, value]: any) => (
-          <AppRoute exact key={key} {...value} />
+        {routes.map((route) => (
+          <AppRoute exact key={route.path} {...route} />
         ))}
       </Switch>
     </BrowserRouter>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Routes } from '../../constants/routes';
+import { Route } from '../../constants/routes';
 
 export interface NavigationMenuProps {
-  routes: Routes;
+  routes: Route[];
 }
 
 const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
@@ -11,11 +11,11 @@ const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
 
   return (
     <ul>
-      {Object.entries(routes).map(([key, value]) => (
-        <li key={key}>
-          <Link to={value.path}>{value.name}</Link>
+      {routes.map((route) => (
+        <li key={route.path}>
+          <Link to={route.path}>{route.name}</Link>
 
-          {value.routes && <NavigationMenu routes={value.routes} />}
+          {route.routes && <NavigationMenu routes={route.routes} />}
         </li>
       ))}
     </ul>
@@ -23,7 +23,7 @@ const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
 };
 
 export interface NavigationProps {
-  routes: Routes;
+  routes: Route[];
 }
 
 const Navigation: React.FC<NavigationProps> = (props) => {

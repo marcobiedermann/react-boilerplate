@@ -5,15 +5,13 @@ import LanguageSwitch from '../../components/LanguageSwitch';
 import Main from '../../components/Main';
 import Navigation from '../../components/Navigation';
 import LANGUAGES from '../../constants/languages';
-import ROUTES from '../../constants/routes';
-
-const { INDEX, PAGE_A, PAGE_B } = ROUTES;
+import { INDEX, PAGE_A, PAGE_B } from '../../constants/routes';
 
 const DefaultLayout: React.FC = (props) => {
   return (
     <>
       <Header>
-        <Navigation routes={{ INDEX, PAGE_A, PAGE_B }} />
+        <Navigation routes={[INDEX, PAGE_A, PAGE_B]} />
         <LanguageSwitch languages={LANGUAGES} />
       </Header>
       <Main {...props} />
