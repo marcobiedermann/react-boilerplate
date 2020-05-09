@@ -1,4 +1,5 @@
 import React from 'react';
+import Breadcrumb from '../../components/Breadcrumb';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import LanguageSwitch from '../../components/LanguageSwitch';
@@ -8,13 +9,18 @@ import LANGUAGES from '../../constants/languages';
 import { INDEX, PAGE_A, PAGE_B } from '../../constants/pages';
 
 const DefaultLayout: React.FC = (props) => {
+  const { children } = props;
+
   return (
     <>
       <Header>
         <Navigation pages={[INDEX, PAGE_A, PAGE_B]} />
         <LanguageSwitch languages={LANGUAGES} />
       </Header>
-      <Main {...props} />
+      <Main>
+        <Breadcrumb routes={[INDEX, PAGE_A, PAGE_B]} />
+        {children}
+      </Main>
       <Footer>Footer</Footer>
     </>
   );
