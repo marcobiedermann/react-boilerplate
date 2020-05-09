@@ -13,7 +13,7 @@ export interface AppRouteProps extends RouteProps {
 }
 
 const AppRoute: React.FC<AppRouteProps> = (props) => {
-  const { component: Component, isProtected, layout: Layout = DefaultLayout, pages, ...otherProps } = props;
+  const { component: Component, isProtected, layout: Layout = DefaultLayout, pages = [], ...otherProps } = props;
 
   if (isProtected) {
     return <PrivateRoute {...otherProps} />;
@@ -21,7 +21,9 @@ const AppRoute: React.FC<AppRouteProps> = (props) => {
 
   return (
     <Switch>
-      {pages && pages.map((page) => <AppRoute key={page.path} {...page} />)}
+      {pages.map((page) => (
+        <AppRoute key={page.path} {...page} />
+      ))}
       <Route>
         <Layout>
           <Suspense fallback={<Loader>Loading …</Loader>}>
