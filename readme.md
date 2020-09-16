@@ -1,6 +1,6 @@
 # React Boilerplate
 
-[![Build Status](https://travis-ci.org/marcobiedermann/react-boilerplate.svg)](https://travis-ci.org/marcobiedermann/react-boilerplate)
+[![Build Status](https://travis-ci.com/marcobiedermann/react-boilerplate.svg)](https://travis-ci.com/marcobiedermann/react-boilerplate)
 [![codecov](https://codecov.io/gh/marcobiedermann/react-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/marcobiedermann/react-boilerplate)
 [![dependencies Status](https://img.shields.io/david/marcobiedermann/react-boilerplate.svg)](https://david-dm.org/marcobiedermann/react-boilerplate)
 [![devDependencies Status](https://img.shields.io/david/dev/marcobiedermann/react-boilerplate.svg)](https://david-dm.org/marcobiedermann/react-boilerplate?type=dev)
