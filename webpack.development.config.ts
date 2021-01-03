@@ -1,8 +1,8 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const merge = require('webpack-merge');
-const baseConfig = require('./webpack.config');
+import { Configuration } from 'webpack';
+import merge from 'webpack-merge';
+import baseConfig from './webpack.config';
 
-module.exports = merge(baseConfig, {
+const config: Configuration = {
   devServer: {
     contentBase: 'client',
     historyApiFallback: true,
@@ -36,4 +36,6 @@ module.exports = merge(baseConfig, {
       },
     ],
   },
-});
+};
+
+export default merge(baseConfig, config);

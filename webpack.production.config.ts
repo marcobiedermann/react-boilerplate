@@ -1,11 +1,11 @@
-/* eslint-disable import/no-extraneous-dependencies */
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const merge = require('webpack-merge');
-const baseConfig = require('./webpack.config');
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
+import { Configuration } from 'webpack';
+import merge from 'webpack-merge';
+import baseConfig from './webpack.config';
 
-module.exports = merge(baseConfig, {
+const config: Configuration = {
   devtool: 'source-map',
   mode: 'production',
   module: {
@@ -56,13 +56,8 @@ module.exports = merge(baseConfig, {
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash:8].css',
     }),
-    new UglifyJsPlugin({
-      sourceMap: true,
-      uglifyOptions: {
-        output: {
-          comments: false,
-        },
-      },
-    }),
+    new TerserPlugin(),
   ],
-});
+};
+
+export default merge(baseConfig, config);
