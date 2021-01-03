@@ -13,7 +13,13 @@ export interface AppRouteProps extends RouteProps {
 }
 
 const AppRoute: React.FC<AppRouteProps> = (props) => {
-  const { component: Component, isProtected, layout: Layout = DefaultLayout, pages = [], ...otherProps } = props;
+  const {
+    component: Component,
+    isProtected,
+    layout: Layout = DefaultLayout,
+    pages = [],
+    ...otherProps
+  } = props;
 
   if (isProtected) {
     return <PrivateRoute {...otherProps} />;
