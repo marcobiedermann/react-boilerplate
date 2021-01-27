@@ -3,13 +3,19 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { resolve } from 'path';
 import { Configuration } from 'webpack';
 
+export const paths = {
+  dist: resolve(__dirname, 'dist'),
+  public: resolve(__dirname, 'public'),
+  src: resolve(__dirname, 'src'),
+};
+
 const config: Configuration = {
   entry: {
-    main: [resolve(__dirname, 'client/assets/js/index')],
+    main: [`${paths.src}/assets/js/index`],
   },
   output: {
     filename: 'assets/js/[name].[contenthash:8].js',
-    path: resolve(__dirname, 'server/public'),
+    path: paths.dist,
   },
   module: {
     rules: [
@@ -27,7 +33,7 @@ const config: Configuration = {
   plugins: [
     new Dotenv(),
     new HtmlWebpackPlugin({
-      template: 'client/index.html',
+      template: `${paths.src}/index.html`,
     }),
   ],
   resolve: {

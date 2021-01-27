@@ -1,10 +1,10 @@
 import { Configuration } from 'webpack';
 import merge from 'webpack-merge';
-import baseConfig from './webpack.config';
+import baseConfig, { paths } from './webpack.config';
 
 const config: Configuration = {
   devServer: {
-    contentBase: 'client',
+    contentBase: paths.public,
     historyApiFallback: true,
   },
   devtool: 'cheap-module-source-map',

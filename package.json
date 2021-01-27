@@ -2,7 +2,7 @@
   "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "React starter boilerplate",
-  "main": "client/index.jsx",
+  "main": "src/index.jsx",
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.production.config.ts",
