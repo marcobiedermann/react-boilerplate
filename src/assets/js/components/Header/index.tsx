@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const Header: React.FC = (props) => {
+export interface HeaderProps {
+  children: ReactNode;
+}
+
+function Header(props: HeaderProps): JSX.Element {
   return <header {...props} />;
-};
+}
 
 export default Header;

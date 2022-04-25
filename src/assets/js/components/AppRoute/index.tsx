@@ -12,7 +12,7 @@ export interface AppRouteProps extends RouteProps {
   pages?: Page[];
 }
 
-const AppRoute: React.FC<AppRouteProps> = (props) => {
+function AppRoute(props: AppRouteProps): JSX.Element {
   const {
     component: Component,
     isProtected,
@@ -39,6 +39,6 @@ const AppRoute: React.FC<AppRouteProps> = (props) => {
       </Route>
     </Switch>
   );
-};
+}
 
 export default AppRoute;

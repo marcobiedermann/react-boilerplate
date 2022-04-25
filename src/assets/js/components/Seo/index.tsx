@@ -1,12 +1,12 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-interface SeoProps {
+export interface SeoProps {
   title: string;
   description?: string;
 }
 
-const Seo: React.FC<SeoProps> = (props) => {
+function Seo(props: SeoProps): JSX.Element {
   const { description, title } = props;
 
   return (
@@ -21,6 +21,6 @@ const Seo: React.FC<SeoProps> = (props) => {
       {description && <meta name="twitter:description" content={description} />}
     </Helmet>
   );
-};
+}
 
 export default Seo;

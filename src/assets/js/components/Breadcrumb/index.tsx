@@ -4,7 +4,7 @@ export interface BreadcrumbProps {
   routes: any;
 }
 
-const Breadcrumb: React.FC<BreadcrumbProps> = (props) => {
+function Breadcrumb(props: BreadcrumbProps): JSX.Element {
   const { routes } = props;
 
   return (
@@ -14,6 +14,6 @@ const Breadcrumb: React.FC<BreadcrumbProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default Breadcrumb;

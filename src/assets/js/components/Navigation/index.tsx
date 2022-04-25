@@ -6,7 +6,7 @@ export interface NavigationMenuProps {
   pages: Page[];
 }
 
-const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
+function NavigationMenu(props: NavigationMenuProps): JSX.Element {
   const { pages } = props;
 
   return (
@@ -20,13 +20,13 @@ const NavigationMenu: React.FC<NavigationMenuProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export interface NavigationProps {
   pages: Page[];
 }
 
-const Navigation: React.FC<NavigationProps> = (props) => {
+function Navigation(props: NavigationProps): JSX.Element {
   const { pages } = props;
 
   return (
@@ -34,7 +34,7 @@ const Navigation: React.FC<NavigationProps> = (props) => {
       <NavigationMenu pages={pages} />
     </nav>
   );
-};
+}
 
 export default Navigation;
 export { NavigationMenu };

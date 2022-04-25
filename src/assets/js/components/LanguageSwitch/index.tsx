@@ -5,11 +5,11 @@ function changeLanguage(lng: string): void {
   i18n.changeLanguage(lng);
 }
 
-interface LanguageSwitchProps {
+export interface LanguageSwitchProps {
   languages: string[];
 }
 
-const LanguageSwitch: React.FC<LanguageSwitchProps> = (props) => {
+function LanguageSwitch(props: LanguageSwitchProps): JSX.Element {
   const { languages } = props;
 
   return (
@@ -21,6 +21,6 @@ const LanguageSwitch: React.FC<LanguageSwitchProps> = (props) => {
       ))}
     </ul>
   );
-};
+}
 
 export default LanguageSwitch;

@@ -7,7 +7,7 @@ export interface RouterProps {
   pages: Page[];
 }
 
-const Router: React.FC<RouterProps> = (props) => {
+function Router(props: RouterProps): JSX.Element {
   const { pages } = props;
 
   return (
@@ -19,6 +19,6 @@ const Router: React.FC<RouterProps> = (props) => {
       </Switch>
     </BrowserRouter>
   );
-};
+}
 
 export default Router;

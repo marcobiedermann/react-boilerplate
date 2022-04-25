@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const Loader: React.FC = (props) => {
+export interface LoaderProps {
+  children: ReactNode;
+}
+
+function Loader(props: LoaderProps): JSX.Element {
   return <div {...props} />;
-};
+}
 
 export default Loader;
