@@ -5,7 +5,7 @@ export interface PrivateRouteProps extends RouteProps {
   isAuthenticated?: boolean;
 }
 
-const PrivateRoute: React.FC<PrivateRouteProps> = (props) => {
+function PrivateRoute(props: PrivateRouteProps): JSX.Element {
   const { isAuthenticated, ...otherProps } = props;
 
   if (!isAuthenticated) {
@@ -13,6 +13,6 @@ const PrivateRoute: React.FC<PrivateRouteProps> = (props) => {
   }
 
   return <Route {...otherProps} />;
-};
+}
 
 export default PrivateRoute;
