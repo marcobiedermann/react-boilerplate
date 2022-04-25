@@ -34,13 +34,13 @@
   },
   "license": "MIT",
   "dependencies": {
-    "i18next": "^19.8.4",
-    "i18next-browser-languagedetector": "^6.0.1",
-    "i18next-http-backend": "^1.0.23",
+    "i18next": "^21.6.16",
+    "i18next-browser-languagedetector": "^6.1.4",
+    "i18next-http-backend": "^1.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-i18next": "^11.8.5",
+    "react-i18next": "^11.16.7",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
