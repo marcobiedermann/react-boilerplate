@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Root from './components/Root';
 import './i18n';
 
-render(<Root />, document.getElementById('root'));
+createRoot(document.getElementById('root')).render(<Root />);

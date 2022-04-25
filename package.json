@@ -37,8 +37,8 @@
     "i18next": "^21.6.16",
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
     "react-i18next": "^11.16.7",
     "react-router-dom": "^6.3.0"
@@ -46,8 +46,8 @@
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@types/node": "^16.11.29",
-    "@types/react": "^17.0.44",
-    "@types/react-dom": "^17.0.15",
+    "@types/react": "^18.0.6",
+    "@types/react-dom": "^18.0.0",
     "@types/react-helmet": "^6.1.5",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
