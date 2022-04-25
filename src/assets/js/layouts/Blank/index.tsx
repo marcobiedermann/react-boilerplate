@@ -1,15 +1,14 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import Main from '../../components/Main';
 
-export interface BlankLayoutProps {
-  children: ReactNode;
-}
-
-function BlankLayout(props: BlankLayoutProps): JSX.Element {
+function BlankLayout(): JSX.Element {
   return (
     <>
-      <Main {...props} />
+      <Main>
+        <Outlet />
+      </Main>
       <Footer>Footer</Footer>
     </>
   );
