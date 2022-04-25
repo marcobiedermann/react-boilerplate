@@ -1,22 +1,51 @@
 import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
-import { Page } from '../../constants/pages';
-import AppRoute from '../AppRoute';
+import { BrowserRouter, RouteObject } from 'react-router-dom';
+import BlankLayout from '../../layouts/Blank';
+import DefaultLayout from '../../layouts/Default';
+import Error404Page from '../../pages/Error404';
+import IndexPage from '../../pages/IndexPage';
+import PageA from '../../pages/PageA';
+import PageB from '../../pages/PageB';
+import SubPage from '../../pages/Subpage';
+import Routes from '../Routes';
 
-export interface RouterProps {
-  pages: Page[];
-}
+const routes: RouteObject[] = [
+  {
+    element: <DefaultLayout />,
+    children: [
+      {
+        element: <IndexPage />,
+        path: '/',
+      },
+      {
+        element: <PageA />,
+        path: '/page-a',
+      },
+      {
+        element: <PageB />,
+        path: '/page-b',
+      },
+      {
+        element: <SubPage />,
+        path: '/page-b/subpage',
+      },
+    ],
+  },
+  {
+    element: <BlankLayout />,
+    children: [
+      {
+        element: <Error404Page />,
+        path: '*',
+      },
+    ],
+  },
+];
 
-function Router(props: RouterProps): JSX.Element {
-  const { pages } = props;
-
+function Router(): JSX.Element {
   return (
     <BrowserRouter>
-      <Switch>
-        {pages.map((page) => (
-          <AppRoute key={page.path} {...page} />
-        ))}
-      </Switch>
+      <Routes routes={routes} />
     </BrowserRouter>
   );
 }

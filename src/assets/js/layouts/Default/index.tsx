@@ -1,5 +1,5 @@
-import React, { ReactNode } from 'react';
-import Breadcrumb from '../../components/Breadcrumb';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import LanguageSwitch from '../../components/LanguageSwitch';
@@ -8,13 +8,7 @@ import Navigation from '../../components/Navigation';
 import LANGUAGES from '../../constants/languages';
 import { INDEX, PAGE_A, PAGE_B } from '../../constants/pages';
 
-export interface DefaultLayoutProps {
-  children: ReactNode;
-}
-
-function DefaultLayout(props: DefaultLayoutProps): JSX.Element {
-  const { children } = props;
-
+function DefaultLayout(): JSX.Element {
   return (
     <>
       <Header>
@@ -22,8 +16,7 @@ function DefaultLayout(props: DefaultLayoutProps): JSX.Element {
         <LanguageSwitch languages={LANGUAGES} />
       </Header>
       <Main>
-        <Breadcrumb routes={[INDEX, PAGE_A, PAGE_B]} />
-        {children}
+        <Outlet />
       </Main>
       <Footer>Footer</Footer>
     </>
