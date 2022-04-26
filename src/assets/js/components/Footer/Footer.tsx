@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-export interface FooterProps {
+interface FooterProps {
   children: ReactNode;
 }
 
@@ -8,4 +8,5 @@ function Footer(props: FooterProps): JSX.Element {
   return <footer {...props} />;
 }
 
+export type { FooterProps };
 export default Footer;

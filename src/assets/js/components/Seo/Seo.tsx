@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-export interface SeoProps {
+interface SeoProps {
   title: string;
   description?: string;
 }
@@ -23,4 +23,5 @@ function Seo(props: SeoProps): JSX.Element {
   );
 }
 
+export type { SeoProps };
 export default Seo;

@@ -3,7 +3,7 @@ import { BrowserRouter, RouteObject } from 'react-router-dom';
 import BlankLayout from '../../layouts/Blank';
 import DefaultLayout from '../../layouts/Default';
 import Error404Page from '../../pages/Error404';
-import IndexPage from '../../pages/IndexPage';
+import HomePage from '../../pages/Home';
 import PageA from '../../pages/PageA';
 import PageB from '../../pages/PageB';
 import SubPage from '../../pages/Subpage';
@@ -14,7 +14,7 @@ const routes: RouteObject[] = [
     element: <DefaultLayout />,
     children: [
       {
-        element: <IndexPage />,
+        element: <HomePage />,
         path: '/',
       },
       {
