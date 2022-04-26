@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Page } from '../../constants/pages';
 
-export interface NavigationMenuProps {
+interface NavigationMenuProps {
   pages: Page[];
 }
 
@@ -22,7 +22,7 @@ function NavigationMenu(props: NavigationMenuProps): JSX.Element {
   );
 }
 
-export interface NavigationProps {
+interface NavigationProps {
   pages: Page[];
 }
 
@@ -36,5 +36,6 @@ function Navigation(props: NavigationProps): JSX.Element {
   );
 }
 
+export type { NavigationProps, NavigationMenuProps };
 export default Navigation;
 export { NavigationMenu };

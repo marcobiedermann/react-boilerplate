@@ -5,7 +5,7 @@ function changeLanguage(lng: string): void {
   i18n.changeLanguage(lng);
 }
 
-export interface LanguageSwitchProps {
+interface LanguageSwitchProps {
   languages: string[];
 }
 
@@ -23,4 +23,5 @@ function LanguageSwitch(props: LanguageSwitchProps): JSX.Element {
   );
 }
 
+export type { LanguageSwitchProps };
 export default LanguageSwitch;

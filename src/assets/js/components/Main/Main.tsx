@@ -8,4 +8,5 @@ function Main(props: MainProps): JSX.Element {
   return <main {...props} />;
 }
 
+export type { MainProps };
 export default Main;
