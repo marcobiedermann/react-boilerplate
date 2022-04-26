@@ -6,9 +6,8 @@ interface RoutesProps {
 
 function Routes(props: RoutesProps): JSX.Element {
   const { routes } = props;
-  const element = useRoutes(routes);
 
-  return element;
+  return useRoutes(routes)!;
 }
 
 export type { RoutesProps };
