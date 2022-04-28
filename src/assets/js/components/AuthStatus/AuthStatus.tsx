@@ -1,5 +1,5 @@
 import React from 'react';
-import useAuth from '../hooks/auth';
+import useAuth from '../../hooks/auth';
 import Link from '../Link';
 
 function AuthStatus(): JSX.Element {
@@ -11,7 +11,7 @@ function AuthStatus(): JSX.Element {
 
   return (
     <div>
-      <p>Welcome {user.username}</p>
+      <p>Welcome {user.username}!</p>
       <p>
         <Link to="/logout">Sign out</Link>
       </p>
