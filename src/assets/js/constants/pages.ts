@@ -2,6 +2,7 @@ export interface Page {
   name: string;
   path: string;
   pages?: Page[];
+  isPrivate?: boolean;
 }
 
 export const INDEX: Page = {
@@ -9,20 +10,31 @@ export const INDEX: Page = {
   path: '/',
 };
 
-export const PAGE_A: Page = {
-  name: 'Page A',
-  path: '/page-a',
+export const LOGIN: Page = {
+  name: 'Login',
+  path: '/login',
+};
+
+export const LOGOUT: Page = {
+  name: 'Logout',
+  path: '/logout',
 };
 
 export const SUBPAGE: Page = {
   name: 'Subpage',
-  path: '/page-b/subpage',
+  path: '/page-a/subpage',
 };
 
-export const PAGE_B: Page = {
-  name: 'Page B',
-  path: '/page-b',
+export const PAGE_A: Page = {
+  name: 'Page A',
+  path: '/page-a',
   pages: [SUBPAGE],
+};
+
+export const PRIVATE: Page = {
+  name: 'Private',
+  path: '/private',
+  isPrivate: true,
 };
 
 export const ERROR_404: Page = {
@@ -30,6 +42,6 @@ export const ERROR_404: Page = {
   path: '*',
 };
 
-const PAGES = [PAGE_A, PAGE_B, INDEX, ERROR_404];
+const PAGES = [PAGE_A, PRIVATE, INDEX, LOGIN, LOGOUT, ERROR_404];
 
 export default PAGES;
