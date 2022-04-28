@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import useAuth from '../hooks/auth';
+import Link from '../Link';
 
 function AuthStatus(): JSX.Element {
   const { user } = useAuth();
@@ -11,7 +11,7 @@ function AuthStatus(): JSX.Element {
 
   return (
     <div>
-      <p>Welcome {user.username}!</p>
+      <p>Welcome {user.username}</p>
       <p>
         <Link to="/logout">Sign out</Link>
       </p>

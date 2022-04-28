@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Page } from '../../constants/pages';
 import useAuth from '../hooks/auth';
+import Link from '../Link';
 
 interface NavigationMenuProps {
   pages: Page[];
@@ -41,5 +41,5 @@ function Navigation(props: NavigationProps): JSX.Element {
 }
 
 export type { NavigationProps, NavigationMenuProps };
-export default Navigation;
 export { NavigationMenu };
+export default Navigation;
