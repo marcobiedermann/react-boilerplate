@@ -5,9 +5,12 @@ import DefaultLayout from '../../layouts/Default';
 import Error404Page from '../../pages/Error404';
 import HomePage from '../../pages/Home';
 import PageA from '../../pages/PageA';
-import PageB from '../../pages/PageB';
+import PrivatePage from '../../pages/Private';
 import SubPage from '../../pages/Subpage';
+import LogoutPage from '../../pages/Logout';
+import LoginPage from '../../pages/Login';
 import Routes from '../Routes';
+import RequireAuth from '../RequireAuth';
 
 const routes: RouteObject[] = [
   {
@@ -22,12 +25,25 @@ const routes: RouteObject[] = [
         path: '/page-a',
       },
       {
-        element: <PageB />,
-        path: '/page-b',
+        element: <SubPage />,
+        path: '/page-a/subpage',
       },
       {
-        element: <SubPage />,
-        path: '/page-b/subpage',
+        element: <LoginPage />,
+        path: '/login',
+      },
+      {
+        element: <LogoutPage />,
+        path: '/logout',
+      },
+      {
+        element: <RequireAuth />,
+        children: [
+          {
+            element: <PrivatePage />,
+            path: '/private',
+          },
+        ],
       },
     ],
   },

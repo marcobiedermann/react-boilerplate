@@ -1,8 +1,13 @@
 import React from 'react';
+import Providers from '../Providers';
 import Router from '../Router';
 
 function Root(): JSX.Element {
-  return <Router />;
+  return (
+    <Providers>
+      <Router />
+    </Providers>
+  );
 }
 
 export default Root;

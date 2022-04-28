@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Page } from '../../constants/pages';
+import useAuth from '../hooks/auth';
 
 interface NavigationMenuProps {
   pages: Page[];
@@ -8,16 +9,19 @@ interface NavigationMenuProps {
 
 function NavigationMenu(props: NavigationMenuProps): JSX.Element {
   const { pages } = props;
+  const { user } = useAuth();
 
   return (
     <ul>
-      {pages.map((page) => (
-        <li key={page.path}>
-          <Link to={page.path}>{page.name}</Link>
+      {pages
+        .filter((page) => !page.isPrivate || user)
+        .map((page) => (
+          <li key={page.path}>
+            <Link to={page.path}>{page.name}</Link>
 
-          {page.pages && <NavigationMenu pages={page.pages} />}
-        </li>
-      ))}
+            {page.pages && <NavigationMenu pages={page.pages} />}
+          </li>
+        ))}
     </ul>
   );
 }
