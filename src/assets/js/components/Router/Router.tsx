@@ -1,16 +1,15 @@
-import React from 'react';
 import { BrowserRouter, RouteObject } from 'react-router-dom';
 import BlankLayout from '../../layouts/Blank';
 import DefaultLayout from '../../layouts/Default';
 import Error404Page from '../../pages/Error404';
 import HomePage from '../../pages/Home';
+import LoginPage from '../../pages/Login';
+import LogoutPage from '../../pages/Logout';
 import PageA from '../../pages/PageA';
 import PrivatePage from '../../pages/Private';
 import SubPage from '../../pages/Subpage';
-import LogoutPage from '../../pages/Logout';
-import LoginPage from '../../pages/Login';
-import Routes from '../Routes';
 import RequireAuth from '../RequireAuth';
+import Routes from '../Routes';
 
 const routes: RouteObject[] = [
   {

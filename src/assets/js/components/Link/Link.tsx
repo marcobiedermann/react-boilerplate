@@ -1,16 +1,26 @@
-import { Link as ReactRouterLink, LinkProps } from 'react-router-dom';
+import { Link as ReactRouterLink, LinkProps as ReactRouterLinkProps } from 'react-router-dom';
 
-type LinkProps = LinkProps;
+interface LinkProps extends ReactRouterLinkProps {
+  to: string;
+}
 
 function Link(props: LinkProps): JSX.Element {
-  const { to, ...otherProps } = props;
+  const { children, to, ...otherProps } = props;
   const isInternal = /^\/(?!\/)/.test(to);
 
   if (isInternal) {
-    return <ReactRouterLink to={to} {...otherProps} />;
+    return (
+      <ReactRouterLink to={to} {...otherProps}>
+        {children}
+      </ReactRouterLink>
+    );
   }
 
-  return <a href={to} target="_blank" rel="noopener noreferrer" {...otherProps} />;
+  return (
+    <a href={to} target="_blank" rel="noopener noreferrer" {...otherProps}>
+      {children}
+    </a>
+  );
 }
 
 export type { LinkProps };

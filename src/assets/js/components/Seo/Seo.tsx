@@ -1,9 +1,8 @@
-import React from 'react';
 import { Helmet } from 'react-helmet';
 
 interface SeoProps {
-  title: string;
   description?: string;
+  title: string;
 }
 
 function Seo(props: SeoProps): JSX.Element {

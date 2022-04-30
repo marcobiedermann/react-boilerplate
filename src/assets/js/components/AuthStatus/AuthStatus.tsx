@@ -1,4 +1,3 @@
-import React from 'react';
 import useAuth from '../../hooks/auth';
 import Link from '../Link';
 

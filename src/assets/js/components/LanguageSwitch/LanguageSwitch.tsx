@@ -1,4 +1,3 @@
-import React from 'react';
 import i18n from '../../i18n';
 
 function changeLanguage(lng: string): void {
@@ -16,7 +15,9 @@ function LanguageSwitch(props: LanguageSwitchProps): JSX.Element {
     <ul>
       {languages.map((language) => (
         <li key={language}>
-          <button onClick={() => changeLanguage(language)}>{language}</button>
+          <button onClick={() => changeLanguage(language)} type="button">
+            {language}
+          </button>
         </li>
       ))}
     </ul>

@@ -1,8 +1,6 @@
-import React from 'react';
-import { RouteProps } from 'react-router-dom';
 import Seo from '../../components/Seo';
 
-function PageA(_props: RouteProps): JSX.Element {
+function PageA(): JSX.Element {
   return (
     <>
       <Seo title="Page A" />

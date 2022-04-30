@@ -1,4 +1,4 @@
-import { createContext, ReactNode } from 'react';
+import { createContext, ReactNode, useMemo } from 'react';
 import { useLocalStorage } from 'react-use';
 
 interface User {
@@ -35,16 +35,16 @@ function AuthProvider(props: AuthProviderProps): JSX.Element {
     callback();
   }
 
-  return (
-    <AuthContext.Provider
-      value={{
-        user,
-        signIn,
-        signOut,
-      }}
-      {...props}
-    />
+  const value = useMemo(
+    () => ({
+      user,
+      signIn,
+      signOut,
+    }),
+    [],
   );
+
+  return <AuthContext.Provider value={value} {...props} />;
 }
 
 export type { AuthProviderProps, AuthContextType };
