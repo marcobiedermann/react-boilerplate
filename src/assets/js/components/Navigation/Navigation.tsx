@@ -1,4 +1,3 @@
-import React from 'react';
 import { Page } from '../../constants/pages';
 import useAuth from '../../hooks/auth';
 import Link from '../Link';

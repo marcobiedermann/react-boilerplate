@@ -1,8 +1,6 @@
-import React from 'react';
-import { RouteProps } from 'react-router-dom';
 import Seo from '../../components/Seo';
 
-function Subpage(_props: RouteProps): JSX.Element {
+function Subpage(): JSX.Element {
   return (
     <>
       <Seo title="Subpage" />

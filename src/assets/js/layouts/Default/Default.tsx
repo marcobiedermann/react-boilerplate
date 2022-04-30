@@ -1,4 +1,3 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 import AuthStatus from '../../components/AuthStatus';
 import Footer from '../../components/Footer';

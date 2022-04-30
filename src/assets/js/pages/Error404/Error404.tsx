@@ -1,8 +1,6 @@
-import React from 'react';
-import { RouteProps } from 'react-router-dom';
 import Seo from '../../components/Seo';
 
-function Error404(_props: RouteProps): JSX.Element {
+function Error404(): JSX.Element {
   return (
     <>
       <Seo title="Error 404" />

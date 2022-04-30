@@ -1,8 +1,6 @@
-import React from 'react';
-import { RouteProps } from 'react-router-dom';
 import Seo from '../../components/Seo';
 
-function IndexPage(_props: RouteProps): JSX.Element {
+function IndexPage(): JSX.Element {
   return (
     <>
       <Seo title="Home" />
