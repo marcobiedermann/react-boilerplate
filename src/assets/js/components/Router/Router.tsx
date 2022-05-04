@@ -1,15 +1,17 @@
+import { lazy } from 'react';
 import { BrowserRouter, RouteObject } from 'react-router-dom';
-import BlankLayout from '../../layouts/Blank';
 import DefaultLayout from '../../layouts/Default';
-import Error404Page from '../../pages/Error404';
-import HomePage from '../../pages/Home';
-import LoginPage from '../../pages/Login';
-import LogoutPage from '../../pages/Logout';
-import PageA from '../../pages/PageA';
-import PrivatePage from '../../pages/Private';
-import SubPage from '../../pages/Subpage';
-import RequireAuth from '../RequireAuth';
 import Routes from '../Routes';
+
+const BlankLayout = lazy(() => import('../../layouts/Blank'));
+const Error404Page = lazy(() => import('../../pages/Error404'));
+const HomePage = lazy(() => import('../../pages/Home'));
+const LoginPage = lazy(() => import('../../pages/Login'));
+const LogoutPage = lazy(() => import('../../pages/Logout'));
+const PageA = lazy(() => import('../../pages/PageA'));
+const PrivatePage = lazy(() => import('../../pages/Private'));
+const SubPage = lazy(() => import('../../pages/Subpage'));
+const RequireAuth = lazy(() => import('../RequireAuth'));
 
 const routes: RouteObject[] = [
   {
