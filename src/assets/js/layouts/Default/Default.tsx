@@ -1,8 +1,10 @@
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import AuthStatus from '../../components/AuthStatus';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import LanguageSwitch from '../../components/LanguageSwitch';
+import Loader from '../../components/Loader';
 import Main from '../../components/Main';
 import Navigation from '../../components/Navigation';
 import LANGUAGES from '../../constants/languages';
@@ -17,7 +19,9 @@ function DefaultLayout(): JSX.Element {
         <AuthStatus />
       </Header>
       <Main>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
       </Main>
       <Footer>Footer</Footer>
     </>
