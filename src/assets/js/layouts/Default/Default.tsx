@@ -1,3 +1,4 @@
+import { getYear } from 'date-fns';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import AuthStatus from '../../components/AuthStatus';
@@ -9,6 +10,7 @@ import Main from '../../components/Main';
 import Navigation from '../../components/Navigation';
 import LANGUAGES from '../../constants/languages';
 import { INDEX, LOGIN, LOGOUT, PAGE_A, PRIVATE } from '../../constants/pages';
+import { NOW } from '../../utilities/date';
 
 function DefaultLayout(): JSX.Element {
   return (
@@ -23,7 +25,7 @@ function DefaultLayout(): JSX.Element {
           <Outlet />
         </Suspense>
       </Main>
-      <Footer>Footer</Footer>
+      <Footer>© {getYear(NOW)} Footer</Footer>
     </>
   );
 }
