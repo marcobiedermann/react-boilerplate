@@ -4,7 +4,7 @@ function IndexPage(): JSX.Element {
   return (
     <>
       <Seo title="Home" />
-      <h1>Index Page</h1>
+      <h1>Home Page</h1>
     </>
   );
 }
