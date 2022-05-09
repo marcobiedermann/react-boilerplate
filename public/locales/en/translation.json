@@ -1,3 +1,7 @@
 {
-  "foo": "bar"
+  "intlCurrency": "{{- val, currency}}",
+  "intlDateTime": "{{- val, datetime}}",
+  "intlList": "{{- val, list}}",
+  "intlNumber": "{{- val, number}}",
+  "intlRelativeTime": "{{- val, relativetime}}"
 }
