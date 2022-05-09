@@ -1,6 +1,7 @@
 import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
 import { createRoot } from 'react-dom/client';
+import '../css/styles.css';
 import Root from './components/Root';
 import './i18n';
 import { environment, isDevelopment } from './utilities/environment';
