@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`language switch should render correctly 1`] = `
+<ul>
+  <li>
+    <button
+      type="button"
+    >
+      de
+    </button>
+  </li>
+  <li>
+    <button
+      type="button"
+    >
+      en
+    </button>
+  </li>
+  <li>
+    <button
+      type="button"
+    >
+      fr
+    </button>
+  </li>
+</ul>
+`;

@@ -49,6 +49,7 @@
     "react-use": "^17.3.2"
   },
   "devDependencies": {
+    "@storybook/testing-react": "^1.2.4",
     "@testing-library/react": "^13.1.1",
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.29",

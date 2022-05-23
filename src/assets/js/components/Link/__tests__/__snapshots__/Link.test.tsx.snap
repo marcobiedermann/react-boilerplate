@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`link should render correctly 1`] = `
+<a
+  href="http://example.com"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  Link
+</a>
+`;
+
+exports[`link should render internal correctly 1`] = `
+<a
+  href="/"
+>
+  Link
+</a>
+`;
