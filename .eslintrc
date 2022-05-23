@@ -21,6 +21,12 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "import/export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": [".storybook/**", "stories/**", "**/*.stories.tsx"]
+      }
+    ],
     "jsx-a11y/label-has-associated-control": "off",
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",

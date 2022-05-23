@@ -1,8 +1,4 @@
-import i18n from '../../i18n';
-
-function changeLanguage(lng: string): void {
-  i18n.changeLanguage(lng);
-}
+import { useTranslation } from 'react-i18next';
 
 interface LanguageSwitchProps {
   languages: string[];
@@ -10,6 +6,11 @@ interface LanguageSwitchProps {
 
 function LanguageSwitch(props: LanguageSwitchProps): JSX.Element {
   const { languages } = props;
+  const { i18n } = useTranslation();
+
+  async function changeLanguage(lng: string): Promise<void> {
+    await i18n.changeLanguage(lng);
+  }
 
   return (
     <ul>
