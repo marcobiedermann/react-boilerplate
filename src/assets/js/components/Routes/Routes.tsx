@@ -1,7 +1,12 @@
-import { useRoutes, RouteObject } from 'react-router-dom';
+import { RouteObject, useRoutes } from 'react-router-dom';
+
+interface Route extends RouteObject {
+  children?: Route[];
+  title?: string;
+}
 
 interface RoutesProps {
-  routes: RouteObject[];
+  routes: Route[];
 }
 
 function Routes(props: RoutesProps): JSX.Element {
@@ -10,5 +15,5 @@ function Routes(props: RoutesProps): JSX.Element {
   return useRoutes(routes)!;
 }
 
-export type { RoutesProps };
+export type { RoutesProps, Route };
 export default Routes;

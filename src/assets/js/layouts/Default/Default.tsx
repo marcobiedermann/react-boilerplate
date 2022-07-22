@@ -9,14 +9,14 @@ import Loader from '../../components/Loader';
 import Main from '../../components/Main';
 import Navigation from '../../components/Navigation';
 import LANGUAGES from '../../constants/languages';
-import { INDEX, LOGIN, LOGOUT, PAGE_A, PRIVATE } from '../../constants/pages';
+import { INDEX, LOGIN, LOGOUT, PAGE_A, PRIVATE, USERS } from '../../constants/pages';
 import { NOW } from '../../utilities/date';
 
 function DefaultLayout(): JSX.Element {
   return (
     <>
       <Header>
-        <Navigation pages={[INDEX, PAGE_A, PRIVATE, LOGIN, LOGOUT]} />
+        <Navigation pages={[INDEX, PAGE_A, PRIVATE, USERS, LOGIN, LOGOUT]} />
         <LanguageSwitch languages={LANGUAGES} />
         <AuthStatus />
       </Header>

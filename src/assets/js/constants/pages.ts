@@ -37,11 +37,16 @@ export const PRIVATE: Page = {
   isPrivate: true,
 };
 
+export const USERS: Page = {
+  name: 'Users',
+  path: '/users',
+};
+
 export const ERROR_404: Page = {
   name: 'Error 404',
   path: '*',
 };
 
-const PAGES = [PAGE_A, PRIVATE, INDEX, LOGIN, LOGOUT, ERROR_404];
+const PAGES = [PAGE_A, PRIVATE, INDEX, LOGIN, LOGOUT, USERS, ERROR_404];
 
 export default PAGES;
