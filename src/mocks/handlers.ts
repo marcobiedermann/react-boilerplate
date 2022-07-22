@@ -1,16 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import { rest } from 'msw';
+import userHandlers from './handlers/user';
 
-const handlers = [
-  rest.get('https://httpbin.org/get', (_request, response, context) => {
-    return response(
-      context.status(200),
-      context.json({
-        status: 'ok',
-      }),
-    );
-  }),
-];
+const handlers = [...userHandlers];
 
 export default handlers;

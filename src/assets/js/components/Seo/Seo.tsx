@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 
 interface SeoProps {
   description?: string;
-  title: string;
+  title?: string;
 }
 
 function Seo(props: SeoProps): JSX.Element {

@@ -1,5 +1,9 @@
-import React, { ReactNode } from 'react';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ReactNode } from 'react';
 import AuthProvider from '../../context/auth';
+
+export const queryClient = new QueryClient();
 
 interface ProvidersProps {
   children: ReactNode;
@@ -8,7 +12,12 @@ interface ProvidersProps {
 function Providers(props: ProvidersProps): JSX.Element {
   const { children } = props;
 
-  return <AuthProvider>{children}</AuthProvider>;
+  return (
+    <QueryClientProvider client={queryClient}>
+      <AuthProvider>{children}</AuthProvider>
+      <ReactQueryDevtools />
+    </QueryClientProvider>
+  );
 }
 
 export type { ProvidersProps };

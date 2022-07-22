@@ -1,7 +1,7 @@
 import { lazy } from 'react';
-import { BrowserRouter, RouteObject } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import DefaultLayout from '../../layouts/Default';
-import Routes from '../Routes';
+import Routes, { Route } from '../Routes';
 
 const BlankLayout = lazy(() => import('../../layouts/Blank'));
 const Error404Page = lazy(() => import('../../pages/Error404'));
@@ -10,10 +10,14 @@ const LoginPage = lazy(() => import('../../pages/Login'));
 const LogoutPage = lazy(() => import('../../pages/Logout'));
 const PageA = lazy(() => import('../../pages/PageA'));
 const PrivatePage = lazy(() => import('../../pages/Private'));
-const SubPage = lazy(() => import('../../pages/Subpage'));
 const RequireAuth = lazy(() => import('../RequireAuth'));
+const SubPage = lazy(() => import('../../pages/Subpage'));
+const UsersPage = lazy(() => import('../../pages/Users'));
+const UserPage = lazy(() => import('../../pages/Users/User'));
+const EditUserPage = lazy(() => import('../../pages/Users/User/Edit'));
+const NewUserPage = lazy(() => import('../../pages/Users/New'));
 
-const routes: RouteObject[] = [
+const routes: Route[] = [
   {
     element: <DefaultLayout />,
     children: [
@@ -28,6 +32,22 @@ const routes: RouteObject[] = [
       {
         element: <SubPage />,
         path: '/page-a/subpage',
+      },
+      {
+        element: <UsersPage />,
+        path: '/users',
+      },
+      {
+        element: <NewUserPage />,
+        path: '/users/new',
+      },
+      {
+        element: <UserPage />,
+        path: '/users/:userId',
+      },
+      {
+        element: <EditUserPage />,
+        path: '/users/:userId/edit',
       },
       {
         element: <LoginPage />,
