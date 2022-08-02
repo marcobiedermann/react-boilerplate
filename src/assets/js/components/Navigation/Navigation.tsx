@@ -1,6 +1,6 @@
+import { NavLink } from 'react-router-dom';
 import { Page } from '../../constants/pages';
 import useAuth from '../../hooks/auth';
-import Link from '../Link';
 
 interface NavigationMenuProps {
   pages: Page[];
@@ -16,7 +16,7 @@ function NavigationMenu(props: NavigationMenuProps): JSX.Element {
         .filter((page) => !page.isPrivate || user)
         .map((page) => (
           <li key={page.path}>
-            <Link to={page.path}>{page.name}</Link>
+            <NavLink to={page.path}>{page.name}</NavLink>
 
             {page.pages && <NavigationMenu pages={page.pages} />}
           </li>
