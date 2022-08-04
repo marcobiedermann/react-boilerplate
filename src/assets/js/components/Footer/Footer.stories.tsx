@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
 import Footer from '.';
 

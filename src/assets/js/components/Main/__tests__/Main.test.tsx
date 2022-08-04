@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+
 import { composeStories } from '@storybook/testing-react';
 import { render } from '@testing-library/react';
 import * as stories from '../Main.stories';
