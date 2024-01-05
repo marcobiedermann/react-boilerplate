@@ -48,7 +48,9 @@ async function createUser(data: any): Promise<CreateUserResponse> {
 }
 
 function useCreateUser() {
-  return useMutation((data: any) => createUser(data));
+  return useMutation({
+    mutationFn: (data: any) => createUser(data),
+  });
 }
 
 type DeleteUserResponse = {};
@@ -60,7 +62,9 @@ async function deleteUserById(id: number): Promise<DeleteUserResponse> {
 }
 
 function useDeleteUser() {
-  return useMutation((id: number) => deleteUserById(id));
+  return useMutation({
+    mutationFn: (id: number) => deleteUserById(id),
+  });
 }
 
 type GetUsersResponse = User[];
@@ -72,7 +76,10 @@ async function getUsers(): Promise<GetUsersResponse> {
 }
 
 function useUsers(): UseQueryResult<GetUsersResponse, Error> {
-  return useQuery<GetUsersResponse, Error>([queryKey], getUsers);
+  return useQuery<GetUsersResponse, Error>({
+    queryKey: [queryKey],
+    queryFn: getUsers,
+  });
 }
 
 type GetUserResponse = User;
@@ -84,7 +91,9 @@ async function getUserById(id: number): Promise<GetUserResponse> {
 }
 
 function useUser(id: number) {
-  return useQuery<GetUserResponse, Error>([queryKey, id], () => getUserById(id), {
+  return useQuery<GetUserResponse, Error>({
+    queryKey: [queryKey, id],
+    queryFn: () => getUserById(id),
     initialData: () => {
       const initialUser = queryClient
         .getQueryData<GetUsersResponse>([queryKey])
@@ -106,9 +115,12 @@ async function updateUserById(id: string, data: any): Promise<UpdateUserResponse
 }
 
 function useUpdateUser() {
-  return useMutation((data: any) => updateUserById(data.id, data), {
+  return useMutation({
+    mutationFn: (data: any) => updateUserById(data.id, data),
     onSuccess: (user) => {
-      queryClient.invalidateQueries([queryKey, user.id]);
+      queryClient.invalidateQueries({
+        queryKey: [queryKey, user.id],
+      });
     },
   });
 }
