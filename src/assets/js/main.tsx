@@ -1,10 +1,16 @@
 import * as Sentry from '@sentry/react';
-import { BrowserTracing } from '@sentry/tracing';
+import { useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
+import {
+  createRoutesFromChildren,
+  matchRoutes,
+  useLocation,
+  useNavigationType,
+} from 'react-router-dom';
 import '../css/styles.css';
 import Root from './components/Root';
 import './i18n';
-import { environment, isDevelopment } from './utilities/environment';
+import { isDevelopment } from './utilities/environment';
 
 async function enableMocking(): Promise<ServiceWorkerRegistration | undefined> {
   if (!isDevelopment) {
@@ -18,9 +24,15 @@ async function enableMocking(): Promise<ServiceWorkerRegistration | undefined> {
 
 Sentry.init({
   dsn: 'https://96e995fc8aec42be8a7a5ef7c3b51afb@o81678.ingest.sentry.io/6365383',
-  environment,
-  integrations: [new BrowserTracing()],
-  tracesSampleRate: 1.0,
+  integrations: [
+    Sentry.reactRouterV6BrowserTracingIntegration({
+      useEffect,
+      useLocation,
+      useNavigationType,
+      createRoutesFromChildren,
+      matchRoutes,
+    }),
+  ],
 });
 
 enableMocking()
