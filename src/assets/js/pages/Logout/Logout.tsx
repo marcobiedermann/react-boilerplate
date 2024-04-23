@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/auth';
 
@@ -10,7 +10,7 @@ function LogoutPage(): JSX.Element {
     signOut(() => {
       navigate('/');
     });
-  }, []);
+  }, [navigate, signOut]);
 
   return (
     <div>

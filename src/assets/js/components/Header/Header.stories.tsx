@@ -1,14 +1,17 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Header from '.';
 
-export default {
+const meta: Meta<typeof Header> = {
   component: Header,
-} as ComponentMeta<typeof Header>;
+};
 
-export const Default: ComponentStoryObj<typeof Header> = {
+type Story = StoryObj<typeof Header>;
+
+const Default: Story = {
   args: {
     children: 'Header',
   },
 };
+
+export { Default };
+export default meta;

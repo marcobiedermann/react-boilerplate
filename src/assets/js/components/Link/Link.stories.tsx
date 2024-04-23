@@ -1,22 +1,25 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import Link from '.';
 
-export default {
+const meta: Meta<typeof Link> = {
   component: Link,
-} as ComponentMeta<typeof Link>;
+};
 
-export const Default: ComponentStoryObj<typeof Link> = {
+type Story = StoryObj<typeof Link>;
+
+const Default: Story = {
   args: {
     children: 'Link',
     to: 'http://example.com',
   },
 };
 
-export const Internal: ComponentStoryObj<typeof Link> = {
+const Internal: Story = {
   args: {
     children: 'Link',
     to: '/',
   },
 };
+
+export { Default, Internal };
+export default meta;

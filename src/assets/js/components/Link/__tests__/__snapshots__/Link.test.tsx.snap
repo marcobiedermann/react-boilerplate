@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`link should render correctly 1`] = `
+exports[`link > should render correctly 1`] = `
 <a
   href="http://example.com"
   rel="noopener noreferrer"
@@ -10,7 +10,7 @@ exports[`link should render correctly 1`] = `
 </a>
 `;
 
-exports[`link should render internal correctly 1`] = `
+exports[`link > should render internal correctly 1`] = `
 <a
   href="/"
 >
