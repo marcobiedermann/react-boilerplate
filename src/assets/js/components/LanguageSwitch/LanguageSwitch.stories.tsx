@@ -1,14 +1,17 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
-import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 import LanguageSwitch from '.';
 
-export default {
+const meta: Meta<typeof LanguageSwitch> = {
   component: LanguageSwitch,
-} as ComponentMeta<typeof LanguageSwitch>;
+};
 
-export const Default: ComponentStoryObj<typeof LanguageSwitch> = {
+type Story = StoryObj<typeof LanguageSwitch>;
+
+const Default: Story = {
   args: {
     languages: ['de', 'en', 'fr'],
   },
 };
+
+export { Default };
+export default meta;

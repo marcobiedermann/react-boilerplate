@@ -6,10 +6,14 @@ import Root from './components/Root';
 import './i18n';
 import { environment, isDevelopment } from './utilities/environment';
 
-if (isDevelopment) {
-  const { default: worker } = await import('../../mocks/browser');
+async function enableMocking(): Promise<ServiceWorkerRegistration | undefined> {
+  if (!isDevelopment) {
+    return Promise.resolve(undefined);
+  }
 
-  worker.start();
+  const { worker } = await import('../../mocks/browser');
+
+  return worker.start();
 }
 
 Sentry.init({
@@ -19,4 +23,8 @@ Sentry.init({
   tracesSampleRate: 1.0,
 });
 
-createRoot(document.getElementById('root')!).render(<Root />);
+enableMocking()
+  .then(() => {
+    createRoot(document.getElementById('root')!).render(<Root />);
+  })
+  .catch((error) => console.log({ error }));

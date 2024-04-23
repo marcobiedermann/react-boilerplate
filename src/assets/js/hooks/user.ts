@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useMutation, useQuery, UseQueryResult } from '@tanstack/react-query';
 import axios from 'axios';
 import { queryClient } from '../components/Providers';

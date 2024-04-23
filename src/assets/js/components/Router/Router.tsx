@@ -1,7 +1,6 @@
 import { lazy } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { RouteObject, RouterProvider, createBrowserRouter } from 'react-router-dom';
 import DefaultLayout from '../../layouts/Default';
-import Routes, { Route } from '../Routes';
 
 const BlankLayout = lazy(() => import('../../layouts/Blank'));
 const Error404Page = lazy(() => import('../../pages/Error404'));
@@ -17,7 +16,7 @@ const UserPage = lazy(() => import('../../pages/Users/User'));
 const EditUserPage = lazy(() => import('../../pages/Users/User/Edit'));
 const NewUserPage = lazy(() => import('../../pages/Users/New'));
 
-const routes: Route[] = [
+const routes = [
   {
     element: <DefaultLayout />,
     children: [
@@ -77,14 +76,13 @@ const routes: Route[] = [
       },
     ],
   },
-];
+] satisfies RouteObject[];
+
+const router = createBrowserRouter(routes);
 
 function Router(): JSX.Element {
-  return (
-    <BrowserRouter>
-      <Routes routes={routes} />
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
 
+export { routes };
 export default Router;

@@ -1,7 +1,6 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
-import { composeStories } from '@storybook/testing-react';
+import { composeStories } from '@storybook/react';
 import { render } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 import * as stories from '../Header.stories';
 
 const { Default } = composeStories(stories);
