@@ -5,6 +5,31 @@ updates:
     schedule:
       interval: 'monthly'
     groups:
+      eslint:
+        patterns:
+          - '@typescript-eslint/*'
+          - 'eslint*'
+      i18next:
+        patterns:
+          - 'i18next*'
+          - 'react-i18next'
+      react:
+        patterns:
+          - '@types/react'
+          - '@types/react-dom'
+          - 'react'
+          - 'react-dom'
+      react-helmet:
+        patterns:
+          - '@types/react-helmet'
+          - 'react-helmet'
       react-query:
         patterns:
           - '@tanstack/react-query*'
+      stylelint:
+        patterns:
+          - 'stylelint*'
+      vite:
+        patterns:
+          - '@vitejs*'
+          - 'vite'
