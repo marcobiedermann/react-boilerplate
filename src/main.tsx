@@ -7,9 +7,9 @@ import {
   useLocation,
   useNavigationType,
 } from 'react-router-dom';
-import '../css/styles.css';
 import Root from './components/Root';
 import './i18n';
+import './index.css';
 import { isDevelopment } from './utilities/environment';
 
 async function enableMocking(): Promise<ServiceWorkerRegistration | undefined> {
@@ -17,7 +17,7 @@ async function enableMocking(): Promise<ServiceWorkerRegistration | undefined> {
     return Promise.resolve(undefined);
   }
 
-  const { worker } = await import('../../mocks/browser');
+  const { worker } = await import('./mocks/browser');
 
   return worker.start();
 }

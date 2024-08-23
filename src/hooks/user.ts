@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useMutation, useQuery, UseQueryResult } from '@tanstack/react-query';
 import axios from 'axios';
@@ -54,10 +53,8 @@ function useCreateUser() {
   });
 }
 
-type DeleteUserResponse = {};
-
-async function deleteUserById(id: number): Promise<DeleteUserResponse> {
-  const response = await instance.delete<DeleteUserResponse>(`/users/${id}`);
+async function deleteUserById(id: number): Promise<undefined> {
+  const response = await instance.delete(`/users/${id}`);
 
   return response.data;
 }
